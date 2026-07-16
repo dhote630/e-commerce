@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     $.ajax({
       type:"POST",
-      url:"http://localhost/woocommerce/admin/api/loginApi.php",
+      url:"http://localhost/E-commerce/admin/api/loginApi.php",
       data:{
         email:$("#loginEmail").val(),
         password:$("#loginPass").val()
