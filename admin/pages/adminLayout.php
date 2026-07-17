@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+  <body id="adminPage">
     <div class="container-fluid p-0 d-flex">
       <div id="left_menu">
         <div class="text-center text-white d-flex flex-column  align-items-center pt-3">
@@ -22,7 +22,7 @@
 
         <ul class="nav navbar-nav">
           <li class="nav-item px-3 access_link" pagename="category.php">
-            <a href="#" class="nav-link text-white">Create Cetegoty</a>
+            <a href="#" class="nav-link text-white">Create Category</a>
           </li>
           <li class="nav-item px-3 access_link" pagename="brands.php">
             <a href="#" class="nav-link text-white">Create Brands</a>
@@ -40,7 +40,9 @@
             </button>
           </div>
           <div>
-            <button class="btn btn-primary rounded-0">Logout</button>
+            <button class="btn btn-primary rounded-0" id="logoutBtn">
+              <i class="fa fa-sign-out"></i>
+              Logout</button>
           </div>
         </div>
 
