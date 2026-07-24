@@ -3,20 +3,34 @@ var token = localStorage.getItem("auth_token");
 $(document).ready(function(){
   $("#categoryForm").submit(function(event){
     event.preventDefault();
+    var apiUrl = "http://localhost/E-commerce/admin/api/createCategoryApi.php";
+    var data = {
+       token:token,
+       category:$("#category").val()
+    };
+    var btn = $("#categoryBtn").attr("edit");
+    if(btn) {
+      apiUrl = "http://localhost/E-commerce/admin/api/updateCategoryApi.php";
+      var id = $("#categoryBtn").attr("keyid");
+      data.id = id;
+    }
     $.ajax({
       type:"POST",
-      url:"http://localhost/E-commerce/admin/api/createCategoryApi",
-      data:{
-         token:token,
-         category:$("#category").val()
-      },
+      url:apiUrl,
+      data:data,
       success:function(res){
+        console.log(res);
         Swal.fire({
           title: "Notification ",
           text: res,
           icon: "success"
         });
+        $("#categoryBtn").html("create category");
+        $("#categoryBtn").removeAttr("keyid");
+        $("#categoryBtn").removeAttr("edit");
         fetchCategory();
+        var form = document.getElementById("categoryForm");
+        form.reset();
       },
       error:function(err){
         var msg = err.responseText;
@@ -26,7 +40,8 @@ $(document).ready(function(){
           icon: "error"
         });
       }
-    })
+    });
+
   })
 });
 
@@ -80,6 +95,19 @@ function fetchCategory(){
                  text: res,
                  icon: "success"
                });
+               $.ajax({
+                 type:"POST",
+                 url:"http://localhost/E-commerce/admin/api/deleteBrandByCategoryApi.php",
+                 data:{
+                   token:token
+                 },
+                 success:function(res){
+
+                 },
+                 error:function(err){
+
+                 }
+               })
                fetchCategory();
              },
              error:function(err){
@@ -108,11 +136,12 @@ function fetchCategory(){
            },
            success:function(res){
              var obj = JSON.parse(res);
+             var id = obj.id;
              var catName = obj.category_name;
              $("#category").val(catName);
-             $("#updateBtn").click(function(){
-               
-             })
+             $("#categoryBtn").attr("keyid",id);
+             $("#categoryBtn").html("Save Changes");
+             $("#categoryBtn").attr("edit",true);
            },
            error:function(err){
 

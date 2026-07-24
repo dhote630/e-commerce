@@ -3,22 +3,37 @@ var token = localStorage.getItem("auth_token");
 $(document).ready(function(){
   $("#brandForm").submit(function(event){
     event.preventDefault();
- var id = $("#catId").val();
+    var catid = $("#catId").val();
+    var brand = $("#brandName").val();
+    var apiUrl = "http://localhost/E-commerce/admin/api/createBrandApi.php";
+    var data = {
+      token:token,
+      catId:catid,
+      brandName:brand
+    };
+    var btn = $("#createBtn").attr("edit");
+     if(btn){
+       apiUrl = "http://localhost/E-commerce/admin/api/updateBrandApi.php";
+       var check =$("#createBtn").attr("keyid");
+       data.brandId = check;
+     }
+
     $.ajax({
         type:"POST",
-        url:"http://localhost/E-commerce/admin/api/createBrandApi.php",
-        data:{
-          token:token,
-          catId:id,
-          brandName:$("#brandName").val()
-        },
+        url:apiUrl,
+        data:data,
         success:function(res){
           Swal.fire({
             title: "Notification ",
             text: res,
             icon: "success"
           });
+          $("#createBtn").html("Create Brand");
+          $("#createBtn").removeAttr("keyid");
+          $("#createBtn").removeAttr("edit");
           fetchBrand();
+          var form = document.getElementById("brandForm");
+          form.reset();
         },
         error:function(err){
           var msg = err.responseText;
@@ -28,7 +43,8 @@ $(document).ready(function(){
             icon: "error"
           });
         }
-    })
+    });
+
   })
 });
 

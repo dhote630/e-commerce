@@ -40,7 +40,7 @@ if($userRes->num_rows>0){
   }
 }else{
   http_response_code(401);
-  echo "unAuthorized  !!";
+  echo $e->getMessage();
 }
 
 
