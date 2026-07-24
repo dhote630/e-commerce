@@ -35,23 +35,24 @@ function fetchDynamicUi(page){
         success:function(res){
           var box = document.getElementById("admin_area");
           box.innerHTML = res;
+          var time = Date.now();
           if(page=="category.php"){
             var scriptTag = document.createElement("SCRIPT");
-            scriptTag.src = "http://localhost/E-commerce/admin/js/category.js";
+            scriptTag.src = `http://localhost/E-commerce/admin/js/category.js?cache=${time}`;
             var adminPage = document.getElementById("adminPage");
             adminPage.append(scriptTag);
           }
 
           if(page=="brands.php"){
             var scriptTag = document.createElement("SCRIPT");
-            scriptTag.src = "http://localhost/E-commerce/admin/js/brands.js";
+            scriptTag.src =`http://localhost/E-commerce/admin/js/brands.js?cache=${time}`;
              var adminPage = document.getElementById("adminPage");
              adminPage.append(scriptTag);
           }
 
           if(page=="productes.php"){
             var scriptTag = document.createElement("SCRIPT");
-            scriptTag.src = "http://localhost/E-commerce/admin/js/productes.js";
+            scriptTag.src = `http://localhost/E-commerce/admin/js/productes.js?cache=${time}`;
             var adminPage = document.getElementById("adminPage");
             adminPage.append(scriptTag);
           }

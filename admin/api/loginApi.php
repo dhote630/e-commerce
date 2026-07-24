@@ -36,11 +36,11 @@ if($userRes->num_rows>0){
      }
   }else {
     http_response_code(401);
-    echo "unAuthorized a !!";
+    echo "unAuthorized  !!";
   }
 }else{
   http_response_code(401);
-  echo "unAuthorized b !!";
+  echo "unAuthorized  !!";
 }
 
 

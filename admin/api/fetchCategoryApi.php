@@ -5,7 +5,7 @@ include("../../vendor/autoload.php");
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 $privateKey = "gkdfweuorfejhfrt3w478945hrh4t5o9thnk5r09ur9-tjfd;-0";
-$token = $_POST['token'];
+$token = $_GET['token'];
 try {
   $decodeToken = JWT::decode($token,new Key($privateKey,'HS256'));
   if($decodeToken->role=='admin'){
