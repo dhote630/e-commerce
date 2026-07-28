@@ -6,7 +6,7 @@
             <input class="form-control" id="category"/>
           </div>
           <div class="mb-2">
-            <button class="btn btn-danger rounded-0" id="categoryBtn">create category</button>
+            <button class="btn btn-primary rounded-0" id="categoryBtn">create category</button>
           </div>
         </form>
   </div>

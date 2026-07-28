@@ -31,7 +31,7 @@ $(document).ready(function(){
           $("#createBtn").html("Create Brand");
           $("#createBtn").removeAttr("keyid");
           $("#createBtn").removeAttr("edit");
-          fetchBrand();
+          fetchAllBrand();
           var form = document.getElementById("brandForm");
           form.reset();
         },
@@ -49,11 +49,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    fetchCategory();
-    fetchBrand();
+    fetchAllCategory();
+    fetchAllBrand();
 });
 
-function fetchCategory(){
+function fetchAllCategory(){
   $.ajax({
     type:"GET",
     url:"http://localhost/E-commerce/admin/api/fetchCategoryApi.php",
@@ -80,7 +80,7 @@ function fetchCategory(){
   })
 }
 
-function fetchBrand(){
+function fetchAllBrand(){
   $.ajax({
     type:"GET",
     url:"http://localhost/E-commerce/admin/api/fetchAllBrandApi.php",
@@ -131,7 +131,7 @@ function fetchBrand(){
                 text: res,
                 icon: "success"
               });
-              fetchBrand();
+              fetchAllBrand();
             },
             error:function(err){
               var msg = err.responseText;

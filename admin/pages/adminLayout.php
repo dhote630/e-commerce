@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://localhost/E-commerce/admin/css/productes.css">
   </head>
   <body id="adminPage">
     <div class="container-fluid p-0 d-flex">
@@ -54,6 +56,7 @@
         </div>
       </div>
     </div>
+   <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
    <script src="../js/adminLayout.js?cache=<?php echo time(); ?>"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@
         <input class="form-control" id="brandName" required/>
       </div>
       <div>
-        <button class="btn btn-danger rounded-0" id="createBtn">Create Brand</button>
+        <button class="btn btn-primary rounded-0" id="createBtn">Create Brand</button>
       </div>
     </form>
   </div>
