@@ -16,7 +16,7 @@ try {
     $res = $db->query($code);
     if($res->num_rows>0){
       http_response_code(409);
-      echo "category already axist";
+      echo "category already exist";
     }else{
       $sqlCode = "INSERT INTO category(category_name)VALUES('$cat')";
       $db->query($sqlCode);

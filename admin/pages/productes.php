@@ -30,7 +30,6 @@
     <div class="mb-2">
        <label>Enter Description</label>
        <div id="editor" >
-         <p id="description"></p>
        </div>
     </div>
   </div>
@@ -64,11 +63,11 @@
   </div>
   <div class="col-md-12 mb-2">
     <div class="progress">
-      <div class="progress-bar progress-bar-striped w-50 progress-bar-animated"></div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" id="product_progress"></div>
     </div>
   </div>
   <div>
-    <button class="btn btn-primary rounded-0">Create Product</button>
+    <button class="btn btn-primary rounded-0" id="productBtn">Create Product</button>
   </div>
 </div>
 </form>

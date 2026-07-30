@@ -11,19 +11,26 @@ try {
   if($decodeToken->role=='admin'){
     $brandId = $_POST['brandId'];
     $productName = $_POST['name'];
-    $description = $_POST['description'];
+    $description = addslashes($_POST['description']);
     $price = $_POST['price'];
     $qty = $_POST['qty'];
     $front = $_POST['front'];
     $back = $_POST['back'];
     $left = $_POST['left'];
     $right = $_POST['right'];
-    $sqlCode = "INSERT INTO product(brand_id,title,description,price,quantity,front_pic,back_pic,
-      left_pic,right_pic)
-      VALUES('$brandId','$productName','$description','$price','$qty','$front','$back','$left','$right')";
-    $res = $db->query($sqlCode);
-     http_response_code(200);
-     echo "product created";
+    $code = "SELECT * FROM product WHERE brand_id='$brandId' AND title='$productName'";
+    $response = $db->query($code);
+    if($response->num_rows>0){
+      http_response_code(409);
+      echo "product allready exist";
+    }else {
+      $sqlCode = "INSERT INTO product(brand_id,title,description,price,quantity,front_pic,back_pic,
+        left_pic,right_pic)
+        VALUES('$brandId','$productName','$description','$price','$qty','$front','$back','$left','$right')";
+      $res = $db->query($sqlCode);
+       http_response_code(200);
+       echo "product created";
+    }
   } else {
     http_response_code(401);
     echo "unauthorized....";

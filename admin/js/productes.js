@@ -60,6 +60,23 @@ $(document).ready(function(){
        data:formdata,
        contentType:false,
        processData:false,
+       xhr:function(){
+         var request = new XMLHttpRequest();
+         request.upload.onprogress = function(fileEvent){
+           var load  = fileEvent.loaded;
+           var total = fileEvent.total;
+           var per = (load*100)/total;
+           $("#product_progress").css({
+             width:per+"%"
+           });
+           if(per==100){
+             $("#product_progress").css({
+               width:"0"
+             })
+           }
+         }
+         return request;
+       },
        success:function(res){
          allProductsPic[keyname]=res;
          console.log(allProductsPic);
@@ -75,45 +92,59 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#productForm").submit(function(event){
     event.preventDefault();
-    var brandId = $("#brand_list").val();
-    var name = $("#name").val();
-    var desc = $("#description").val();
-    var price = $("#price").val();
-    var qty = $("#qty").val();
-    var front = allProductsPic.front_pic;
-    var back = allProductsPic.back_pic;
-    var left = allProductsPic.left_pic;
-    var right = allProductsPic.right_pic;
-    var formdata = new FormData();
-    formdata.append("token",token);
-    formdata.append("brandId",brandId);
-    formdata.append("name",name);
-    formdata.append("description",desc);
-    formdata.append("price",price);
-    formdata.append("qty",qty);
-    formdata.append("front",front);
-    formdata.append("back",back);
-    formdata.append("left",left);
-    formdata.append("right",right);
-    $.ajax({
-      type:"POST",
-      url:"http://localhost/E-commerce/admin/api/createProductApi.php",
-      data:formdata,
-      success:function(res){
-        Swal.fire({
-          title: "Notification ",
-          text: res,
-          icon: "success"
-        });
-      },
-      error:function(err){
-        var msg = err.responseText;
-        Swal.fire({
-          title: "Notification ",
-          text: msg,
-          icon: "error"
-        });
-      }
-    })
+    if(allProductsPic.front_pic!="" && allProductsPic.back_pic!=""
+    &&allProductsPic.left_pic!="" && allProductsPic.right_pic!=""){
+
+      var brandId = $("#brand_list").val();
+      var name = $("#name").val();
+      var desc = $("#editor").html();
+      var price = $("#price").val();
+      var qty = $("#qty").val();
+      var front = allProductsPic.front_pic;
+      var back = allProductsPic.back_pic;
+      var left = allProductsPic.left_pic;
+      var right = allProductsPic.right_pic;
+      var formdata = new FormData();
+      formdata.append("token",token);
+      formdata.append("brandId",brandId);
+      formdata.append("name",name);
+      formdata.append("description",desc);
+      formdata.append("price",price);
+      formdata.append("qty",qty);
+      formdata.append("front",front);
+      formdata.append("back",back);
+      formdata.append("left",left);
+      formdata.append("right",right);
+      $.ajax({
+        type:"POST",
+        url:"http://localhost/E-commerce/admin/api/createProductApi.php",
+        data:formdata,
+        beforSend:function(){
+          $("#productBtn").attr("disabled","disabled");
+          $("#productBtn").html("processing...");
+        },
+        success:function(res){
+          Swal.fire({
+            title: "Notification ",
+            text: res,
+            icon: "success"
+          });
+          $("#productBtn").removeAttr("disabled");
+          $("#productBtn").html("Create Product");
+        },
+        error:function(err){
+          var msg = err.responseText;
+          Swal.fire({
+            title: "Notification ",
+            text: msg,
+            icon: "error"
+          });
+          $("#productBtn").removeAttr("disabled");
+          $("#productBtn").html("Create Product");
+        }
+      });
+    } else {
+      alert("upload all images first..");
+    }
   })
 });
