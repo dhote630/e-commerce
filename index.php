@@ -11,7 +11,7 @@
   <body>
     <?php include('user/pages/header.php') ?>
    <div>
-     Section coding start
+     User Interface
    </div>
      <?php include('user/pages/footer.php') ?>
      <script src="user/js/header.js?cache=<?php echo time(); ?>"></script>
