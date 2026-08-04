@@ -24,11 +24,11 @@ $.ajax({
         </li>`
         menu.innerHTML+=design;
         var brands = document.getElementsByClassName("brand_dropdown");
-        console.log(brands);
+        // console.log(brands);
         allBrands.map(function(name,i){
         // console.log(name);
         brands[numIndex].innerHTML+= `
-          <li> <a class="dropdown-item"> </a>${name}</li>
+          <li> <a class="dropdown-item"> ${name}</a></li>
         `
       });
       numIndex = numIndex+1;
@@ -36,7 +36,7 @@ $.ajax({
     });
   },
   error:function(err){
-
+  console.log(err.responseText);
   }
 })
 }

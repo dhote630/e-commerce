@@ -20,3 +20,15 @@
   background:white;
   box-shadow:0px 4px 4px 4px #ccc;
 }
+
+#sliderCaption {
+  height:100%;
+  display:flex;
+}
+
+#txtContainer {
+  display:flex;
+  justify-content:space-around;
+  font-size:18px !important;
+  margin-bottom:5px;
+}

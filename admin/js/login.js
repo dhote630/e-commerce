@@ -11,7 +11,7 @@ $(document).ready(function(){
       },
       beforeSend:function(){
         $("#loginBtn").attr("disabled","disabled");
-        $("#oginLoader").removeClass("d-none");
+        $("#loginLoader").removeClass("d-none");
       },
       success:function(res){
         $("#loginBtn").removeAttr("disabled","disabled");

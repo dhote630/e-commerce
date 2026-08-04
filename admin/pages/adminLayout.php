@@ -33,6 +33,9 @@
           <li class="nav-item px-3 access_link" pagename="productes.php">
             <a href="#" class="nav-link text-white">Create Productes</a>
           </li>
+          <li class="nav-item px-3 access_link" pagename="slider.php">
+            <a href="#" class="nav-link text-white">Home Slider</a>
+          </li>
         </ul>
       </div>
       <div id="right_menu">

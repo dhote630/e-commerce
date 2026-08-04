@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  fetchDynamicUi("category.php");
+  fetchDynamicUi("slider.php");
   $(".access_link").click(function(){
     var page = $(this).attr("pagename");
      fetchDynamicUi(page);
@@ -53,6 +53,13 @@ function fetchDynamicUi(page){
           if(page=="productes.php"){
             var scriptTag = document.createElement("SCRIPT");
             scriptTag.src = `http://localhost/E-commerce/admin/js/productes.js?cache=${time}`;
+            var adminPage = document.getElementById("adminPage");
+            adminPage.append(scriptTag);
+          }
+
+          if(page=='slider.php'){
+            var scriptTag = document.createElement("SCRIPT");
+            scriptTag.src = `http://localhost/E-commerce/admin/js/slider.js?cache=${time}`;
             var adminPage = document.getElementById("adminPage");
             adminPage.append(scriptTag);
           }
