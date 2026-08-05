@@ -14,33 +14,6 @@
    <div class="container-fluid px-0">
      <div class="carousel slide" data-bs-ride="carousel">
        <div class="carousel-inner" id="carousel">
-
-         <!-- <div class="carousel-item active">
-           <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="Pratiksha" class="d-block"
-            style="width:100%;height:577px"/>
-           <div class="carousel-caption" id="sliderCaption">
-             <h3 class="text-white">Pravina</h3>
-             <p class="text-white">student at polytechnic college</p>
-           </div>
-         </div>
-
-         <div class="carousel-item">
-           <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt='Kashish' class="d-block"
-            style="width:100%;height:577px"/>
-           <div class="carousel-caption">
-             <h3 class="text-white">Kashish Dawande</h3>
-             <p class="text-white">Student</p>
-           </div>
-         </div>
-
-         <div class="carousel-item">
-           <img src="https://www.w3schools.com/bootstrap5/la.jpg"
-           alt="Pravina" class="d-block" style="width:100%;height:577px"/>
-           <div class="carousel-caption">
-             <h3 class="text-white">kashish dawande</h3>
-             <p class="text-white">khushiiiiiiii</p>
-           </div>
-         </div> -->
        </div>
      </div>
    </div>

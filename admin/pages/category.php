@@ -11,7 +11,7 @@
         </form>
   </div>
   <div class="col-md-7 p-2">
-    <table class="table table-secondary text-center" id="category_list">
+    <table class="table table-danger text-center" id="category_list">
       <tr>
         <td>S/No</td>
         <td>Category</td>

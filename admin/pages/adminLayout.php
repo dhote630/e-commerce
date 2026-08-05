@@ -20,7 +20,7 @@
           <h3>Hi Admin</h3>
         </div>
         <p class="p-0 m-0 text-center text-warning">
-          <i class="fa fa-envelope"></i>kashish@gmail.com
+          <i class="fa fa-envelope"></i>Pratiksha@gmail.com
         </p>
 
         <ul class="nav navbar-nav">
