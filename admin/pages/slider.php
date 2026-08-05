@@ -39,6 +39,16 @@
           </select>
         </div>
       </div>
+      <div class="mb-2 d-flex">
+        <div id="txtContainer">
+          <label>Change Color</label>
+          <input type="color" id="txtInput"/>
+        </div>
+        <div>
+          <label>Font Size</label>
+          <input type="range" id="fontInput"/>
+        </div>
+      </div>
       <div id="txtContainer">
         <input type="color" id="txtInput"/>
         <span>Bg Theme</span>
