@@ -36,11 +36,26 @@ $(document).ready(function(){
     $("#sliderCaption").css({justifyContent:position});
   });
 
-  // $("#txtInput").on("change",function(){
-  //   var txtcolor = $(this).val();
-  //   $("#captionTitle").css({color:txtcolor});
-  //   $("#captionDesc").css({color:txtcolor});
-  // });
+  $(".caption_text").dblclick(function(){
+    $(".caption_text").css({borderStyle:"none",padding:0});
+    $(this).css({border:"1px dashed black",padding:"2px"});
+    $(".caption_text").removeClass("caption_active");
+    $(this).addClass("caption_active");
+  });
+
+  $("#fontInput").on("input",function(){
+    var size = $(this).val();
+    console.log(size);
+    $(".caption_active").css({fontSize:size+"px"});
+    $(".caption_active").css({borderStyle:"none",padding:0});
+  });
+
+
+  $("#txtInput").on("change",function(){
+    var txtcolor = $(this).val();
+    $(".caption_active").css({color:txtcolor});
+    $(".caption_active").css({borderStyle:"none",padding:0});
+  });
 
 });
 
@@ -74,6 +89,8 @@ $(document).ready(function(){
               text: res,
               icon: "success"
             });
+            var form = document.getElementById("sliderForm");
+            form.reset();
           },
           error:function(err){
             var msg = err.responseText;

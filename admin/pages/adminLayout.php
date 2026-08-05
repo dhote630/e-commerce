@@ -19,7 +19,7 @@
           <i class="fa fa-user-circle-o" id="userIcon"></i>
           <h3>Hi Admin</h3>
         </div>
-        <p class="p-0 m-0 text-center text-white">
+        <p class="p-0 m-0 text-center text-warning">
           <i class="fa fa-envelope"></i>kashish@gmail.com
         </p>
 
@@ -34,7 +34,7 @@
             <a href="#" class="nav-link text-white">Create Productes</a>
           </li>
           <li class="nav-item px-3 access_link" pagename="slider.php">
-            <a href="#" class="nav-link text-white">Home Slider</a>
+            <a href="#" class="nav-link text-white">Create Home Slider</a>
           </li>
         </ul>
       </div>
@@ -46,7 +46,7 @@
             </button>
           </div>
           <div>
-            <button class="btn btn-primary rounded-0" id="logoutBtn">
+            <button class="btn" style="background:pink" id="logoutBtn">
               <i class="fa fa-sign-out"></i>
               Logout</button>
           </div>
@@ -54,7 +54,7 @@
 
         <!-- admin area -->
         <div class="p-4">
-           <div class="container-fluid bg-white p-5" id="admin_area">
+           <div class="container-fluid bg-dark p-5" id="admin_area">
            </div>
         </div>
       </div>

@@ -45,12 +45,15 @@ var allProductsPic = {
 
 $(document).ready(function(){
  $(".product_pic").click(function(){
+   var img = $(this);
    var keyname = $(this).attr("keyname");
    var input = document.createElement("INPUT");
    input.type = "file";
    input.click();
    input.onchange = function() {
      var file = input.files[0];
+     var blobUrl = URL.createObjectURL(file);
+     img.attr("src",blobUrl);
      var formdata = new FormData();
      formdata.append("token",token);
      formdata.append("image",file);
@@ -119,7 +122,7 @@ $(document).ready(function(){
         type:"POST",
         url:"http://localhost/E-commerce/admin/api/createProductApi.php",
         data:formdata,
-        beforSend:function(){
+        beforeSend:function(){
           $("#productBtn").attr("disabled","disabled");
           $("#productBtn").html("processing...");
         },
@@ -131,6 +134,8 @@ $(document).ready(function(){
           });
           $("#productBtn").removeAttr("disabled");
           $("#productBtn").html("Create Product");
+          var form = document.getElementById("productForm");
+          form.reset();
         },
         error:function(err){
           var msg = err.responseText;

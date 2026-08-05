@@ -14,7 +14,7 @@ try {
   $type = $image['type'];
   $size = $image['size']/1024/1024;
   if($type=='image/jpeg'||$type=='image/jpg'||$type=='image/png'){
-   if($size<=1){
+   if($size<=100){
      $randomNum = rand();
      $path = pathinfo($name);
      $ext = $path['extension'];

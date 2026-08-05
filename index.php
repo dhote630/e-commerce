@@ -13,7 +13,7 @@
     <?php include('user/pages/header.php') ?>
    <div class="container-fluid px-0">
      <div class="carousel slide" data-bs-ride="carousel">
-       <div class="carousel-inner" id="carouselBox">
+       <div class="carousel-inner" id="carousel">
 
          <!-- <div class="carousel-item active">
            <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="Pratiksha" class="d-block"

@@ -8,26 +8,19 @@ function fetchSliders(){
     url:"http://localhost/E-commerce/user/api/fetchSliderApi.php",
     success:function(res){
       var obj = JSON.parse(res);
-      var inner = $("#carouselBox");
+      var carousel = document.getElementById('carousel');
 
       $(obj).map(function(index,item){
         var caption = item.caption;
-        var imagePath = item.image_path;
+        var imagePath = "http://localhost/E-commerce/admin/productes/"+item.image_path;
         console.log(item);
         var design = `
-        <div class="carousel-item active">
-          <img src="http://localhost/E-commerce/admin/productes/+${imagePath}" style="width:100%"/>
+        <div class="carousel-item ${index==0 ? 'active' : ''}" data-bs-interval="2000">
+          <img src="${imagePath}" class="d-block" style="width:100%;height:600px"/>
           ${caption}
         </div>
         `
-         inner.innerHTML+=design;
-        // var design = document.createElement("DIV");
-        // var img = document.createElement("IMG");
-        // $(img).attr("src","http://localhost/E-commerce/admin/productes/"+imagePath);
-        // $(design).addClass("carousel-item active");
-        // $(design).append(img);
-        // // $(design).html(caption);
-        // $(inner).append(design);
+         carousel.innerHTML+=design;
       });
 
 

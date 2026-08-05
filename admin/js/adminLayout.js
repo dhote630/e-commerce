@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  fetchDynamicUi("slider.php");
+  fetchDynamicUi("category.php");
   $(".access_link").click(function(){
     var page = $(this).attr("pagename");
      fetchDynamicUi(page);
