@@ -1,0 +1,24 @@
+#cardBody {
+  background:oklch(89.2% 0.058 10.001);
+}
+
+#title {
+color:oklch(45.9% 0.187 3.815);
+}
+
+#price {
+color:oklch(28.4% 0.109 3.907);
+}
+
+#pic {
+  height:150px;
+  width:100%;
+}
+
+.product_btn {
+  width:100px;
+  height:34px;
+  border:1px solid white;
+  background:oklch(28.4% 0.109 3.907);
+  color:white;
+}

@@ -1,9 +1,9 @@
 <?php
 
 include("db.php");
-$sqlCode = "SELECT GROUP_CONCAT(brand.brand_name) As brands,
+$sqlCode = "SELECT GROUP_CONCAT(brand.brand_name,'=',brand.id) As brands,
  category.category_name,category.id,brand.id AS brandid
-FROM category LEFT JOIN brand ON category.id = brand.cat_id GROUP BY brand.cat_id;";
+FROM category INNER JOIN brand ON category.id = brand.cat_id GROUP BY brand.cat_id;";
 $response = $db->query($sqlCode);
 if($response->num_rows>0){
   $tmpData = [];

@@ -1,0 +1,11 @@
+.login_outline_btn {
+  width:100px;
+  height:30px;
+  border:1px solid white;
+  background:inherit;
+  color:white;
+}
+
+#headerLayout {
+  background:oklch(28.4% 0.109 3.907);
+}

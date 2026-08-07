@@ -27,11 +27,17 @@ $.ajax({
         // console.log(brands);
         allBrands.map(function(name,i){
         // console.log(name);
+        var brand = name.split("=");
         brands[numIndex].innerHTML+= `
-          <li> <a class="dropdown-item"> ${name}</a></li>
+          <li keyid="${brand[1]}" class="brand_dropdown_item" > <a class="dropdown-item" > ${brand[0]}</a></li>
         `
       });
       numIndex = numIndex+1;
+      $(".brand_dropdown_item").click(function(){
+        var brandid = $(this).attr("keyid");
+        window.location="http://localhost/E-commerce/user/pages/brandproduct.php?brandid="+brandid;
+
+      })
      }
     });
   },
@@ -40,3 +46,9 @@ $.ajax({
   }
 })
 }
+
+$(document).ready(function(){
+  $("#registerBtn").click(function(){
+    window.location="http://localhost/E-commerce/user/pages/register.php";
+  });
+});
