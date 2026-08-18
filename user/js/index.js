@@ -20,7 +20,7 @@ function fetchSliders(){
           <img src="${imagePath}" class="d-block" style="width:100%;height:600px"/>
           ${caption}
         </div>
-        `
+        `;
          carousel.innerHTML+=design;
       });
 

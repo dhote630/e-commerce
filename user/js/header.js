@@ -52,3 +52,9 @@ $(document).ready(function(){
     window.location="http://localhost/E-commerce/user/pages/register.php";
   });
 });
+
+$(document).ready(function(){
+  $("#loginBtn").click(function(){
+    window.location="http://localhost/E-commerce/user/pages/login.php";
+  });
+});

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="http://localhost/E-commerce/user/css/header.css?cache=<?php echo time(); ?>">
   </head>
   <body>
-    <?php include('http://localhost/E-commerce/user/pages/header.php') ?>
+    <?php include('user/pages/header.php') ?>
    <div class="container-fluid px-0">
      <div class="carousel slide" data-bs-ride="carousel">
        <div class="carousel-inner" id="carousel">
@@ -21,10 +21,9 @@
 
    <div class="container-fluid">
      <div class="row" id="product_box">
-
      </div>
    </div>
-     <?php include('http://localhost/E-commerce/user/pages/footer.php') ?>
+     <?php include('user/pages/footer.php') ?>
      <script src="http://localhost/E-commerce/user/js/index.js?cache=<?php echo time(); ?>"></script>
      <script src="http://localhost/E-commerce/user/js/header.js?cache=<?php echo time(); ?>"></script>
   </body>

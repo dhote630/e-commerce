@@ -10,7 +10,7 @@
 
     </ul>
     <div>
-      <button class="login_outline_btn">Login</button>
+      <button class="login_outline_btn mx-2" id="loginBtn">Login</button>
       <button class="login_outline_btn" id="registerBtn">Register</button>
     </div>
    </div>
