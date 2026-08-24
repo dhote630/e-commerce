@@ -15,6 +15,9 @@ $(document).ready(function() {
       success:function(res){
         $("#loginButton").html("Login");
         $("#loginButton").removeAttr("disabled");
+        var obj = JSON.parse(res);
+        var token = obj.token;
+        localStorage.setItem("user_token",token);
         Swal.fire({
           title: "Authentication",
           text: "Login Success",

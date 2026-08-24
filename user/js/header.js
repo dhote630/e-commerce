@@ -1,5 +1,6 @@
 $(document).ready(function(){
   fetchAllCategoryBrands();
+  checkLogin();
 });
 
 function fetchAllCategoryBrands() {
@@ -58,3 +59,26 @@ $(document).ready(function(){
     window.location="http://localhost/E-commerce/user/pages/login.php";
   });
 });
+
+
+function checkLogin(){
+  var token = localStorage.getItem("user_token");
+  if(token!=null){
+    $.ajax({
+      type:"GET",
+      url:"http://localhost/E-commerce/user/api/verifyAuthApi.php",
+      data:{
+        token:token
+      },
+      success:function(){
+        $("#registration").addClass("d-none");
+        $("#user_option").removeClass("d-none");
+      },
+      error:function(){
+        localStorage.clear();
+        $("#user_option").addClass("d-none");
+        $("#registration").removeClass("d-none");
+      }
+    })
+  }
+}
